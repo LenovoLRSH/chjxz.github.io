@@ -1,47 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="shortcut  icon"
+          href="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=654191189,368331607&fm=26&gp=0.jpg"
+          type="image/x-icon"/>
+    <title>
+        陈岩波的个人网站
+    </title>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?4a8a680cae4cfc338ddc2b9e6a2c0684";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
 </head>
 <body>
-<h2>教育背景</h2>
-<p>
-    2011年9月-2015年6月 大连东软信息学院（电子信息工程）
-</p>
 <br>
-<h2>工作经历</h2>
-<p>
-    2015年6月-2015年12月 北京一起玩耍科技有限公司
-</p>
-<p>
-    2015年12月-2017年3月 霍尔果斯唔哩科技有限公司
-</p>
-<p>
-    2017年3月-2021年3月 北京平方根科技有限公司
-</p>
+<div class="container theme-showcase" role="main">
+    <div class="jumbotron">
+        <h1>您好，欢迎来到这里<small></small></h1>
+        <h2>很高兴认识你。</h2>
+        <h2>我是陈岩波。</h2>
+    </div>
+    <br>
+    <h3>个人信息</h3>
+    <hr>
+    <p>性别:男</p>
+    <p>出生年月:1991.04</p>
+    <p>手机:15558181117</p>
+    <p>邮箱:chjxz@126.com</p>
+    <p>学历:本科（大连东软信息学院）</p>
+    <p>专业:电子信息工程</p>
+    <br>
+    <h3>工作经历</h3>
+    <hr>
+    <h4>2017.4 - 2021.5 北京平方根科技有限公司</h4>
+    <p>职位：算法工程师</p>
+    <p>工作内容：负责公司项目研发</p>
+    <h4>2015.12 - 2017.3 霍尔果斯唔哩网络科技有限公司</h4>
+    <p>职位：iOS 开发工程师</p>
+    <p>工作内容：要播app iOS客户端研发</p>
+    <h4>2015.6 - 2015.12 北京一起玩耍科技有限公司</h4>
+    <p>职位：iOS 开发工程师</p>
+    <p>工作内容：一起玩耍iOS客户端开发，玩耍直播iOS主播端研发</p>
+    <br>
+
+    <h3>项目介绍</h3>
+    <hr>
+    <h4>自动驾驶模块研发</h4>
+    <p>交通工具检测，交通标志检测。</p>
+    <p>交通工具检测：使用YOLO V3模型检测行人，各类车辆，摩托车，汽车，卡车，公交车。</p>
+    <p>交通标识识别：使用YOLO V3模型，加载MSCOCO数据集的预训练权重，在此基础上送入数据进行模型微调。模型最终输出交通标志的图片信息，之后使用ResNet50对交通标志进行分类，并最终输出信息。</p>
+    <br>
+
+    <h4>安防监控模块研发</h4>
+    <p>车牌识别，人流量统计，人脸识别，口罩检测，体温检测。</p>
+    <p>车牌识别：停车场收费口拍摄图像进行车牌识别。使用Farster-RCNN框架检测出车牌位置后，使用EasyOCR对车牌上的数据进行提取。</p>
+    <p>人流量统计：判断进出的人数。检测行人框，通过计数线时进行计数。</p>
+    <p>人脸识别：小区门禁，停车场门禁，对进入的人进行人脸识别，与数据库中人脸进行匹配，判断是否可以进入。</p>
+    <p>口罩检测：检测未佩戴口罩的人脸并提醒。</p>
+    <p>体温检测：先定位人脸位置，然后检测人脸框内的最高温度。当发现温度过高进行提醒。</p>
+    <p>负责训练数据的收集、刷选、标注。数据收集通过现场拍照、爬取、生成等方式收集，并标注车牌。
+模型的选择、搭建、训练。</p>
+    <br>
+
+    <h4>智能换脸</h4>
+    <p>类似穿上军装换脸H5互动的项目。</p>
+    <p>使用face_recognition检测人脸坐标，根据坐标抠图，输出人脸然后与模板融合，生成图片。</p>
+    <br>
+
+    <h4>标注平台项目</h4>
+    <p>对视频进行标注的平台，主要分为管理员，审核员，和标注员。管理员发出任务，标注员标注后，审核员进行审核。通过审核后，标注员得到收益。</p>
+    <br>
+    <h3>职业技能</h3>
+    <hr>
+    <p>掌握：python语言，Pandas, Matplotlib数据分析库，TensorFlow，pytorch框架，openCV库。</p>
+    <p>熟悉：传统机器学习算法，KNN，K-means，线性回归，逻辑回归，决策树，朴素贝叶斯，HMM，EM，SVM，xgboost，lightGBM。</p>
+    <p>图像分类算法，CNN，AlexNet，VGG，GooglNet，ResNet。</p>
+    <p>目标检测算法，RCNN，Fast-RCNN，Faster-RCNN，YOLO V1-V5，SSD。</p>
+    <p>图像分割算法，FCN，UNet，Mask RCNN。</p>
+    <p>Linux系统，MySQL，redis，Neo4j图数据库。</p>
+    <p>了解：RNN，LSTM，GRU，Transformer，BERT。</p>
+    <br>
+
+    <h3>自我介绍</h3>
+    <hr>
+    <p>2015年大学毕业后就一直在北京工作。这6年工作的单位都是小型的互联网公司。相对都是比较有挑战性的工作。从最开始的手机录屏，到直播，再到计算机视觉领域。接触过的领域比较多，移动端，前端，后端，产品，运营，基本上都接触过一些，知识面足够的广。深度方面是无止境的，遇到不会的问题，能够尽快的理解问题并且解决问题的能力如果有了，剩下的就是时间问题了。深度会随着时间慢慢变深。</p>
+    <p>简历终究是有限的，如果有时间可以看一下我的线上简历，上面一些其他的东西。chenyanbo.com 或者是 2.c1o.co 这两个地址都是一样的。有一些认证证书，参与的开源项目，还有一些其他的。</p>
+    <p>上面的网址就是您正在浏览的网站^.^</p>
+
+    <br>
+    <br>
+    <p>谢谢您的耐心，看到这里。</p>
+    <br>
+    <a></a>
+    <a href="/">返回主页</a>
+
+
+    <!--    <p>查看源码获取我的联系方式</p>-->
+    <!--    <p hidden>我的联系方式。微信：ab2008 手机：15558181117 邮箱：chjxz@126.com</p>-->
+
+    <br><br><br>
+</div>
+<hr>
+<div align="center"><h5>©1991-2021 chenyanbo.com</h5></div>
 <br>
-<h3>职业技能</h3>
-<p>
-    掌握：python语言，
-    Pandas,Matplotlib数据分析库，
-    TensorFlow，pytorch框架,openCV库,
-
-</p>
-<p>
-    熟悉：传统机器学习算法，KNN,K-means，线性回归，逻辑回归，
-    决策树，朴素贝叶斯，HMM，EM，SVM，xgboost，lightGBM。
-    图像分类算法，CNN，AlexNet，ZFnet，VGG，GooglNet，ResNet。
-    目标检测算法，RCNN，Faster-RCNN，YOLO，SSD。
-    图像分割算法，FCN，UNet，Mask RCNN。
-    Linux系统，MySql，redis,MongoDB,neo4j。
-</p>
-<p>
-    了解：RNN，LSTM，GRU，Transformer，BERT，ELMO，XLNET，GPT。
-</p>
-<p>
-
-</p>
-
+<br>
+<br>
 </body>
 </html>
