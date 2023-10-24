@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>使用后置摄像头拍照</title>
+</head>
+<body>
+    <video width="800" height="600" id="camera" autoplay></video>
+    <button id="capture">拍照</button>
+    <canvas id="canvas" style="display: none;"></canvas>
+    <img id="photo" src="" alt="照片">
+
+    <script>
+        const video = document.getElementById('camera');
+        const captureButton = document.getElementById('capture');
+        const canvas = document.getElementById('canvas');
+        const photo = document.getElementById('photo');
+
+        // 获取可用摄像头设备
+        async function getCameraDevices() {
+            const devices = await navigator.mediaDevices.enumerateDevices();
+            return devices.filter(device => device.kind === 'videoinput');
+        }
+
+        // 获取后置摄像头设备ID
+        async function getBackCameraDeviceId() {
+            const cameraDevices = await getCameraDevices();
+            for (const device of cameraDevices) {
+                if (device.label.toLowerCase().includes('back') || device.label.toLowerCase().includes('rear')) {
+                    return device.deviceId;
+                }
+            }
+            return null;
+        }
+
+        // 启动后置摄像头
+        async function startBackCamera() {
+            const backCameraDeviceId = await getBackCameraDeviceId();
+
+            if (!backCameraDeviceId) {
+                alert('未找到后置摄像头。');
+                return;
+            }
+
+            // 设置期望的最高分辨率
+            const constraints = {
+                video: {
+                    deviceId: { exact: backCameraDeviceId },
+                    width: { ideal: 4000 },
+                    height: { ideal: 3000 }
+                }
+            };
+
+            // 获取后置摄像头流
+            const stream = await navigator.mediaDevices.getUserMedia(constraints);
+
+            video.srcObject = stream;
+        }
+
+        // 拍照按钮点击事件
+        captureButton.addEventListener('click', function () {
+            const context = canvas.getContext('2d');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            // 将图像数据转换为DataURL
+            const dataURL = canvas.toDataURL('image/jpeg');
+
+            // 将照片显示在页面上
+            photo.src = dataURL;
+        });
+
+        // 启动后置摄像头
+        startBackCamera();
+    </script>
+</body>
+</html>
