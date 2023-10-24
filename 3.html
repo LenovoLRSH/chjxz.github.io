@@ -4,7 +4,7 @@
     <title>摄像头拍照</title>
 </head>
 <body>
-    <video id="camera" autoplay></video>
+    <video width="320" height="240" id="camera" autoplay></video>
     <button id="capture">拍照</button>
     <canvas id="canvas" style="display: none;"></canvas>
     <img id="photo" src="" alt="照片">
@@ -34,8 +34,8 @@
         // 拍照按钮点击事件
         captureButton.addEventListener('click', function () {
             const context = canvas.getContext('2d');
-            canvas.width = 1920;
-            canvas.height = 1080;
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
             context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
             // 将图像数据转换为DataURL
