@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>摄像头拍照</title>
+</head>
+<body>
+    <video id="camera" autoplay></video>
+    <button id="capture">拍照</button>
+    <canvas id="canvas" style="display: none;"></canvas>
+    <img id="photo" src="" alt="照片">
+
+    <script>
+        const video = document.getElementById('camera');
+        const captureButton = document.getElementById('capture');
+        const canvas = document.getElementById('canvas');
+        const photo = document.getElementById('photo');
+
+        // 获取摄像头视频流
+        navigator.mediaDevices.getUserMedia({
+    video: {
+        width: { ideal: 1920 },
+        height: { ideal: 1080 }
+    }
+})
+.then(function (stream) {
+    video.srcObject = stream;
+})
+.catch(function (error) {
+    console.error('获取摄像头失败：', error);
+});
+
+        // 拍照按钮点击事件
+        captureButton.addEventListener('click', function () {
+            const context = canvas.getContext('2d');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            // 将图像数据转换为DataURL
+            const dataURL = canvas.toDataURL('image/jpeg');
+
+            // 将照片显示在页面上
+            photo.src = dataURL;
+        });
+    </script>
+</body>
+</html>
