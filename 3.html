@@ -34,8 +34,8 @@
         // 拍照按钮点击事件
         captureButton.addEventListener('click', function () {
             const context = canvas.getContext('2d');
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight;
+            canvas.width = 1920;
+            canvas.height = 1080;
             context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
             // 将图像数据转换为DataURL
