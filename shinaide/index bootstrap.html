@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>施耐德视觉检测平台</title>
+<!-- 引入Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+  /* 自定义侧边栏样式 */
+  .sidebar {
+    background-color: #28a745 !important; /* Bootstrap 绿色 */
+    color: #fff; /* 白色文本 */
+    min-height: calc(100vh - 56px); /* 设置最小高度为视口高度 */
+  }
+  .sidebar .nav-link {
+    color: #fff !important; /* 白色文本 */
+  }
+  .sidebar .nav-link:hover {
+    color: #ccc !important; /* 悬停时的文本颜色 */
+  }
+  /* 调整主内容区的顶部边距 */
+  .main-role {
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+  <img src="logo.png" alt="用户头像" style="width: 184px;">
+  <a class="navbar-brand" href="#">施耐德视觉检测平台</a>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">管理员</a>
+      </li>
+      <li class="nav-item">
+        <img src="user-avatar.png" alt="用户头像" class="rounded-circle" style="width: 30px;">
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              资料查看
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              接线检查
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              监测点记录
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              测试记录
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              结果汇总
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 main-role">
+      <!-- 内容部分 -->
+    </main>
+  </div>
+</div>
+
+<!-- 引入Bootstrap的JS库 -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.10/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn

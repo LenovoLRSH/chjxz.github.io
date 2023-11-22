@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>施耐德视觉检测平台登录</title>
+  <!-- 引入Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* 自定义样式 */
+    .login-container {
+      min-height: 100vh; /* 使容器满屏 */
+    }
+    .login-brand {
+      background-color: #28a745; /* Bootstrap绿色 */
+      color: #fff; /* 文字白色 */
+      height: 100vh; /* 完全视口高度 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5em;
+    }
+    .form-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form-box {
+      max-width: 300px; /* 设置表单盒子最大宽度 */
+    }
+    .form-control {
+      width: 100%; /* 输入框宽度为100% */
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid login-container">
+    <div class="row">
+      <!-- 左侧绿色占位区域 -->
+      <div class="col-md-4 login-brand">
+        <!-- 这里可以添加更多的内容或者图像 -->
+      </div>
+      <!-- 右侧登录表单区域 -->
+      <div class="col-md-8 form-container">
+        <div class="form-box">
+          <h2 class="text-center">施耐德视觉检测平台</h2>
+          <form>
+            <div class="form-group">
+              <label for="username">用户名</label>
+              <input type="text" class="form-control" id="username" placeholder="请输入用户名">
+            </div>
+            <div class="form-group">
+              <label for="password">密码</label>
+              <input type="password" class="form-control" id="password" placeholder="请输入密码">
+            </div>
+            <div class="text-center">
+		<a href="./index.html">
+              <button type="button" class="btn btn-success">登录</button>
+		</a>
+              <button type="button" class="btn btn-link">找回密码</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 引入Bootstrap JS及其依赖 -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.10/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
